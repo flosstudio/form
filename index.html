@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/flosstudio.css">
+    <link rel="stylesheet" href="static/css/pure.css">
+    <link rel="stylesheet" href="static/css/tail.select-light.css">
+    <script async src="static/js/tail.select.js">
+    </script>
+    <script async src="static/js/flosstudio.js">
+    </script>
+    <title>flosstudio/submit</title>
+  </head>
+  <body>
+      <form class="pure-form pure-form-aligned">
+        <fieldset>
+          <legend>* = Required field</legend>
+          <h1 style="text-align: center;">Submit an entry to flosstudio</h1>
+          <div class="pure-control-group">
+            <label for="aligned-name">Program name*:</label>
+            <input type="text" id="aligned-name" required="" />
+          </div>
+          <div class="pure-control-group">
+            <label for="aligned-summary">Summary*:</label>
+            <input type="text" id="aligned-summary" required="" />
+          </div>
+          <div class="pure-control-group">
+            <label for="select-licenses">License(s)*:</label>
+            <select class="select-move" id="select-licenses" multiple>
+              <optgroup label="" id="licenses">
+              </optgroup>
+            </select>
+            <div class="tail-move-container" id="mc-licenses"></div>
+          </div>
+          <div class="pure-control-group">
+            <label for="aligned-authors">Authors:</label>
+            <input type="text" id="aligned-authors"
+                    placeholder = "Mario Rossi, Alan Smithee, ..." />
+          </div>
+          <div class="pure-control-group">
+            <label for="aligned-url">URL:</label>
+            <input type="url" id="aligned-url" />
+          </div>
+          <div class="pure-control-group">
+            <label for="aligned-version">Latest version*:</label>
+            <input type="text" id="aligned-version" required="" />
+          </div>
+          <div class="pure-control-group">
+            <label for="aligned-version">Last updated:</label>
+            <input type="date" id="aligned-updated"/>
+          </div>
+          <div class="pure-control-group">
+            <label for="select-formats">Formats*:</label>
+            <select class="select-move" id="select-formats" multiple>
+              <optgroup label="" id="formats">
+              </optgroup>
+            </select>
+            <div class="tail-move-container" id="mc-formats"></div>
+          </div>
+          <div class="pure-control-group">
+            <label for="select-categories">Categories:</label>
+            <select class="select-move" id="select-categories" multiple>
+              <optgroup label="" id="categories">
+              </optgroup>
+            </select>
+            <div class="tail-move-container" id="mc-categories"></div>
+          </div>
+          <div class="pure-control-group">
+            <label for="select-repositories">In repositories:</label>
+            <select class="select-move" id="select-repositories" multiple>
+              <optgroup label="" id="repositories">
+              </optgroup>
+            </select>
+            <div class="tail-move-container" id="mc-repositories"></div>
+          </div>
+          <div class="pure-control-group">
+            <label for="aligned-notes">Notes:</label>
+            <input type="text" id="aligned-notes" />
+          </div>
+          <div class="pure-control-group">
+            <label for="aligned-editor-name">
+              Your name and email (optional):
+            </label>
+            <input type="text" id="aligned-editor-name"
+                    placeholder="Aoi Wu &lt;awu@example.com&gt;" />
+          </div>
+          <div class="pure-control-group">
+            <label for="submit">
+              By submitting you agree to release this data under the
+              <a href="https://creativecommons.org/publicdomain/zero/1.0/">
+                CC0 1.0 Universal license
+              </a>
+            </label>
+            <button type="submit" class="pure-button pure-button-primary"
+                    id="submit">
+              Submit
+            </button>
+          </div>
+        </fieldset>
+      </form>
+  </body>
+</html>
