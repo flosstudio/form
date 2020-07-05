@@ -1,7 +1,5 @@
 /* SPDX-License-Identifier: AGPL-3.0-or-late */
 
-html, body {
-  display: flex;
-  justify-content: center;
+.centered {
+  text-align: center;
 }
-

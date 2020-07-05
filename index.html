@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/normalize.css">
     <link rel="stylesheet" href="static/css/flosstudio.css">
-    <link rel="stylesheet" href="static/css/pure.css">
+    <link rel="stylesheet" href="static/css/skeleton.css">
     <link rel="stylesheet" href="static/css/tail.select-light.css">
     <script async src="static/js/tail.select.js">
     </script>
@@ -12,19 +13,21 @@
     <title>flosstudio/submit</title>
   </head>
   <body>
-      <form class="pure-form pure-form-aligned">
+    <div class="container">
+      <h1 class="centered">Submit an entry to flosstudio</h1>
+      <form>
         <fieldset>
-          <legend>* = Required field</legend>
-          <h1 style="text-align: center;">Submit an entry to flosstudio</h1>
-          <div class="pure-control-group">
-            <label for="aligned-name">Program name*:</label>
-            <input type="text" id="aligned-name" required="" />
+          <div class="row">
+            <label for="input-name">Program name*:</label>
+            <input type="text" class="u-full-width" id="input-name"
+                   required />
           </div>
-          <div class="pure-control-group">
-            <label for="aligned-summary">Summary*:</label>
-            <input type="text" id="aligned-summary" required="" />
+          <div class="row">
+            <label for="input-summary">Summary*:</label>
+            <input type="text" id="input-summary" required
+                   class="u-full-width"/>
           </div>
-          <div class="pure-control-group">
+          <div class="row">
             <label for="select-licenses">License(s)*:</label>
             <select class="select-move" id="select-licenses" multiple>
               <optgroup label="" id="licenses">
@@ -32,24 +35,25 @@
             </select>
             <div class="tail-move-container" id="mc-licenses"></div>
           </div>
-          <div class="pure-control-group">
-            <label for="aligned-authors">Authors:</label>
-            <input type="text" id="aligned-authors"
+          <div class="row">
+            <label for="input-authors">Authors:</label>
+            <input type="text" id="input-authors" class="u-full-width"
                     placeholder = "Mario Rossi, Alan Smithee, ..." />
           </div>
-          <div class="pure-control-group">
-            <label for="aligned-url">URL:</label>
-            <input type="url" id="aligned-url" />
+          <div class="row">
+            <label for="input-url">URL:</label>
+            <input type="url" class="u-full-width" id="input-url" />
           </div>
-          <div class="pure-control-group">
-            <label for="aligned-version">Latest version*:</label>
-            <input type="text" id="aligned-version" required="" />
+          <div class="row">
+            <label for="input-version">Latest version*:</label>
+            <input type="text" class="u-full-width" id="input-version"
+                   required />
           </div>
-          <div class="pure-control-group">
-            <label for="aligned-version">Last updated:</label>
-            <input type="date" id="aligned-updated"/>
+          <div class="row">
+            <label for="input-version">Last updated:</label>
+            <input type="date" class="u-full-width" id="input-updated"/>
           </div>
-          <div class="pure-control-group">
+          <div class="row">
             <label for="select-formats">Formats*:</label>
             <select class="select-move" id="select-formats" multiple>
               <optgroup label="" id="formats">
@@ -57,7 +61,7 @@
             </select>
             <div class="tail-move-container" id="mc-formats"></div>
           </div>
-          <div class="pure-control-group">
+          <div class="row">
             <label for="select-categories">Categories:</label>
             <select class="select-move" id="select-categories" multiple>
               <optgroup label="" id="categories">
@@ -65,7 +69,7 @@
             </select>
             <div class="tail-move-container" id="mc-categories"></div>
           </div>
-          <div class="pure-control-group">
+          <div class="row">
             <label for="select-repositories">In repositories:</label>
             <select class="select-move" id="select-repositories" multiple>
               <optgroup label="" id="repositories">
@@ -73,30 +77,34 @@
             </select>
             <div class="tail-move-container" id="mc-repositories"></div>
           </div>
-          <div class="pure-control-group">
-            <label for="aligned-notes">Notes:</label>
-            <input type="text" id="aligned-notes" />
+          <div class="row">
+            <label for="textarea-notes">Notes:</label>
+            <textarea class="u-full-width" id="textarea-notes"></textarea>
           </div>
-          <div class="pure-control-group">
-            <label for="aligned-editor-name">
+          <div class="row">
+            <label for="input-editor-name">
               Your name and email (optional):
             </label>
-            <input type="text" id="aligned-editor-name"
+            <input type="text" id="input-editor-name" class="u-full-width"
                     placeholder="Aoi Wu &lt;awu@example.com&gt;" />
           </div>
-          <div class="pure-control-group">
-            <label for="submit">
+          <div class=row>
+            <span>* = Required field</span>
+          </div>
+          <div class="row u-pull-right">
+            <label for="submit" class="">
               By submitting you agree to release this data under the
               <a href="https://creativecommons.org/publicdomain/zero/1.0/">
                 CC0 1.0 Universal license
               </a>
             </label>
-            <button type="submit" class="pure-button pure-button-primary"
+            <button type="submit" class="button-primary u-pull-right"
                     id="submit">
               Submit
             </button>
           </div>
         </fieldset>
       </form>
+    </div>
   </body>
 </html>

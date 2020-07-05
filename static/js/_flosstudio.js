@@ -29,6 +29,7 @@ window.onload = function() {
     hideDisabled: true,
     multiLimit: -1,
     multiShowCount: false,
+    width: '100%'
   };
 
   arrays.forEach(function (item){
