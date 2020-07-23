@@ -8,20 +8,14 @@ function fetch_array(database, field) {
 function load_options(options, id) {
   let target = document.getElementById(id);
   options.forEach(function (option) {
-      let element = document.createElement('option');
-      element.innerHTML = option;
-      target.appendChild(element);
+    let element = document.createElement('option');
+    element.innerHTML = option;
+    target.appendChild(element);
   });
 }
 
-window.onload = function() {
+function main() {
   const arrays = ['licenses', 'formats', 'categories', 'repositories'];
-
-  arrays.forEach(function (item) {
-    load_options(fetch_array(database, item[0].toUpperCase() + item.slice(1)),
-                 item);
-  });
-
   const select_options = {
     search: true,
     descriptions: true,
@@ -32,8 +26,22 @@ window.onload = function() {
     width: '100%'
   };
 
+  document.getElementById('submit').disabled = false;
+
+  arrays.forEach(function (item) {
+    load_options(fetch_array(database, item[0].toUpperCase() + item.slice(1)),
+      item);
+  });
+
   arrays.forEach(function (item){
+    /* global tail */
     tail.select('#select-' + item, Object.assign(select_options,
-    {multiContainer: '#mc-' + item}));
+      {multiContainer: '#mc-' + item}));
   });
 }
+
+document.onreadystatechange = function () {
+  if (document.readyState === 'complete') {
+    main();
+  }
+};

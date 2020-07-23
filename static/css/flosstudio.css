@@ -1,5 +1,21 @@
 /* SPDX-License-Identifier: AGPL-3.0-or-late */
 
+@keyframes flash {
+  from {
+    color: rgba(60, 243, 41, 1);
+  }
+  to {
+    color: rgba(60, 243, 41, 0);
+    height: 0;
+  }
+}
+
 .centered {
   text-align: center;
+}
+
+.success {
+  animation-name: flash;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
 }

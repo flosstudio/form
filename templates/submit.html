@@ -6,35 +6,56 @@
     <link rel="stylesheet" href="static/css/flosstudio.css">
     <link rel="stylesheet" href="static/css/skeleton.css">
     <link rel="stylesheet" href="static/css/tail.select-light.css">
+    <title>flosstudio/submit</title>
     <script async src="static/js/tail.select.js">
     </script>
     <script async src="static/js/flosstudio.js">
     </script>
-    <title>flosstudio/submit</title>
   </head>
   <body>
     <div class="container">
+      <header>
+        <noscript>
+          <p>
+            You don't like using JavaScript, uh? Understandable, even though we
+            ship 100% <a href="https://www.gnu.org/philosophy/free-sw.html">
+            libre code</a> needed for user-friendliness and bot protection.
+            You can still contribute by sending us your YAML files
+            at flosstudio over tuxfamily dot org along with a statement that
+            you release your entries under the CC0 1.0 Universal license
+            or by submitting a merge request to our
+            <a href="https://github.com/flosstudio/flosstudio">
+            repository</a>. Thanks for your interest!
+          </p>
+        </noscript>
+      </header>
       <h1 class="centered">Submit an entry to flosstudio</h1>
-      <form>
+      {% if success %}
+      <div class="success centered">
+        <h4>Entry successfully submitted!</h4>
+      </div>
+      {% endif %}
+      <form method="POST">
         <fieldset>
           <div class="row">
             <label for="input-name">Program name*:</label>
             <input type="text" class="u-full-width" id="input-name"
-                   required />
+                   name="name" required />
           </div>
           <div class="row">
             <label for="input-summary">Summary*:</label>
             <input type="text" id="input-summary" required
-                   class="u-full-width"/>
+                   name="summary" class="u-full-width"/>
           </div>
           <div class="row">
             <label for="textarea-description">Description:</label>
-            <textarea class="u-full-width" id="textarea-description">
-            </textarea>
+            <textarea class="u-full-width" id="textarea-description"
+                      name="description"></textarea>
           </div>
           <div class="row">
             <label for="select-licenses">License(s)*:</label>
-            <select class="select-move" id="select-licenses" multiple>
+            <select class="select-move" id="select-licenses"
+                    name="licenses" multiple>
               <optgroup label="" id="licenses">
               </optgroup>
             </select>
@@ -43,24 +64,29 @@
           <div class="row">
             <label for="input-authors">Authors:</label>
             <input type="text" id="input-authors" class="u-full-width"
-                    placeholder = "Mario Rossi, Alan Smithee, ..." />
+                   name="authors"
+                   placeholder = "Mario Rossi, Alan Smithee, ..." />
           </div>
+          <input type="url" style="display: none;" name="url" />
           <div class="row">
-            <label for="input-url">URL:</label>
-            <input type="url" class="u-full-width" id="input-url" />
+            <label for="input-ur">URL:</label>
+            <input type="url" class="u-full-width" id="input-ur"
+                   name="ur"/>
           </div>
           <div class="row">
             <label for="input-version">Latest version*:</label>
             <input type="text" class="u-full-width" id="input-version"
-                   required />
+                   name="version" required />
           </div>
           <div class="row">
             <label for="input-version">Last updated:</label>
-            <input type="date" class="u-full-width" id="input-updated"/>
+            <input type="date" class="u-full-width" id="input-updated"
+                   name="updated"/>
           </div>
           <div class="row">
             <label for="select-formats">Formats*:</label>
-            <select class="select-move" id="select-formats" multiple>
+            <select class="select-move" id="select-formats"
+                    name="formats" multiple>
               <optgroup label="" id="formats">
               </optgroup>
             </select>
@@ -68,7 +94,8 @@
           </div>
           <div class="row">
             <label for="select-categories">Categories:</label>
-            <select class="select-move" id="select-categories" multiple>
+            <select class="select-move" id="select-categories"
+                    name="categories" multiple>
               <optgroup label="" id="categories">
               </optgroup>
             </select>
@@ -76,7 +103,8 @@
           </div>
           <div class="row">
             <label for="select-repositories">In repositories:</label>
-            <select class="select-move" id="select-repositories" multiple>
+            <select class="select-move" id="select-repositories"
+                    name="repositories" multiple>
               <optgroup label="" id="repositories">
               </optgroup>
             </select>
@@ -84,14 +112,16 @@
           </div>
           <div class="row">
             <label for="textarea-notes">Notes:</label>
-            <textarea class="u-full-width" id="textarea-notes"></textarea>
+            <textarea class="u-full-width" id="textarea-notes"
+                      name="notes"></textarea>
           </div>
           <div class="row">
             <label for="input-editor-name">
               Your name and email (optional):
             </label>
             <input type="text" id="input-editor-name" class="u-full-width"
-                    placeholder="Aoi Wu &lt;awu@example.com&gt;" />
+                    placeholder="Aoi Wu &lt;awu@example.com&gt;"
+                    name="editor-name" />
           </div>
           <div class=row>
             <span>* = Required field</span>
@@ -104,7 +134,7 @@
               </a>
             </label>
             <button type="submit" class="button-primary u-pull-right"
-                    id="submit">
+                    id="submit" disabled>
               Submit
             </button>
           </div>

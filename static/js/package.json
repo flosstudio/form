@@ -1,0 +1,18 @@
+{
+  "name": "flosstudio-form",
+  "version": "0.1.0",
+  "description": "Web interface for submitting entries to flosstudio",
+  "main": "flosstudio.js",
+  "keywords": [
+    "music",
+    "gnulinux",
+    "database",
+    "floss",
+    "libre"
+  ],
+  "author": "flosstudio team",
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "eslint": "^7.5.0"
+  }
+}
