@@ -49,6 +49,8 @@ def submit():
     Submission
     """
     if request.method == 'POST':
+        if request.form.get('url'):
+            return 'Error', 404
         entry = {k:v for k, v in {
             'Name': request.form.get('name'),
             'Summary': request.form.get('summary'),
